@@ -7,7 +7,7 @@
     
     <!-- Linked bootstrap & fonts -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
     <!-- Linked stylesheet -->
     <link rel="stylesheet" href="./Style/style.css" />
@@ -21,9 +21,22 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
-    </div>
+    
+    <main class="container-fluid">
+      <div class="row">
+        <div class = "col-2 d-flex justify-content-end">9am</div>
+        <div class="col-8 bg-dark"><textarea id="textFiller" cols="100" rows="4"></textarea></div>
+        <div class="col-1 saveBtn d-flex"><span class="fa fa-floppy-o fa-2x align-self-center"></span></div>
+        <div class="col-1"></div>
+      </div>
+    </main>
+
+    <!-- <i class="fa fa-floppy-o fa-2x" aria-hidden="true"></i> -->
+    <footer>
+      <div class="navbar fixed-bottom bg-white justify-content-center">
+          <p><strong>Alex Bertrand | &copy; Copyright 2020</strong></p>
+      </div>
+  </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
