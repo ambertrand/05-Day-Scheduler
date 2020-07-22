@@ -6,15 +6,24 @@ $(document).ready(function () {
     
     dateDisplay.text(currentDate);
 
-    
+
+    $("#saveBtn").on("click", function(event) {
+        event.preventDefault();
 
 
+    })
 });
 
 
 
 
 // Psuedo code
+// Make timeblock change color when during current hour
+// Add click event to save button
+// Store info in local storage
+
+
+// Requirements
 
 // THEN I am presented with timeblocks for standard business hours
 // WHEN I view the timeblocks for that day
