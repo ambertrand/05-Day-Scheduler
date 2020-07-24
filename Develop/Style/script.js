@@ -18,9 +18,10 @@ $(document).ready(function () {
 
 
 // Psuedo code
-// Make timeblock change color when during current hour
-// Add click event to save button
-// Store info in local storage
+// When button is clicked input sent to local storage
+// When input added to Pull from LS to append to text area
+// Delete input removes from LS
+// Add time from moment so color code blocks work based on time
 
 
 // Requirements
