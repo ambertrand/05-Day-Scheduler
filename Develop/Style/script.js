@@ -2,9 +2,12 @@ $(document).ready(function () {
 
     // Displays current date in    
     const dateDisplay = $("#currentDay");
+    const timeDisplay = $("#currentTime");
     const currentDate = moment().format("MMMM DD, YYYY");
-    
+    const currentTime = moment().format("hh:mm A");
+
     dateDisplay.text(currentDate);
+    timeDisplay.text(currentTime);
 
     const textInput = document.querySelector(".textInput")
     let input = [];
@@ -12,7 +15,7 @@ $(document).ready(function () {
     function localStorageInput() {
         input = JSON.parse(localStorage.getItem("textInput"));
         const text = $(".textInput").val();
-        let scheduleInput = {text };
+        let scheduleInput = { text };
         if (!input) {
             input = [];
         }
@@ -20,11 +23,13 @@ $(document).ready(function () {
         localStorage.setItem("textInput", JSON.stringify(input));
     }
 
-        $(".saveBtn").on("click", function() {
-            // console.log("clicked");
-            localStorageInput();
-        })
-   
+    $(".saveBtn").on("click", function () {
+        // console.log("clicked");
+        localStorageInput();
+    })
+
+    
+
 });
 
 
