@@ -4,12 +4,12 @@ $(document).ready(function () {
     const dateDisplay = $("#currentDay");
     const currentDate = moment().format("LLLL");
     
-
     dateDisplay.text(currentDate);
 
     const textInput = document.querySelector(".textInput")
     let input = [];
 
+    // When text is inputed this function sends to local storage when save button clicked
     function localStorageInput() {
         input = JSON.parse(localStorage.getItem("textInput"));
         const text = $(".textInput").val();
@@ -20,6 +20,7 @@ $(document).ready(function () {
         input.push(scheduleInput);
         localStorage.setItem("textInput", JSON.stringify(input));
     }
+
         // Color coded text area
         $("textarea").each(function() {
             const textAreaHour = parseInt($(this).attr("value"));
@@ -32,7 +33,6 @@ $(document).ready(function () {
                 $(this).addClass("future");
             }
         });
-
 
 
     $(".saveBtn").on("click", function () {
