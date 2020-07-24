@@ -6,12 +6,25 @@ $(document).ready(function () {
     
     dateDisplay.text(currentDate);
 
+    const textInput = document.querySelector(".textInput")
+    let input = [];
 
-    $("#saveBtn").on("click", function(event) {
-        event.preventDefault();
-        
+    function localStorageInput() {
+        input = JSON.parse(localStorage.getItem("textInput"));
+        const text = $(".textInput").val();
+        let scheduleInput = {text };
+        if (!input) {
+            input = [];
+        }
+        input.push(scheduleInput);
+        localStorage.setItem("textInput", JSON.stringify(input));
+    }
 
-    })
+        $(".saveBtn").on("click", function() {
+            // console.log("clicked");
+            localStorageInput();
+        })
+   
 });
 
 
