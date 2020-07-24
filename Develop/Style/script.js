@@ -2,12 +2,10 @@ $(document).ready(function () {
 
     // Displays current date in    
     const dateDisplay = $("#currentDay");
-    const timeDisplay = $("#currentTime");
-    const currentDate = moment().format("MMMM DD, YYYY");
-    const currentTime = moment().format("hh:mm A");
+    const currentDate = moment().format("LLLL");
+    
 
     dateDisplay.text(currentDate);
-    timeDisplay.text(currentTime);
 
     const textInput = document.querySelector(".textInput")
     let input = [];
@@ -22,6 +20,20 @@ $(document).ready(function () {
         input.push(scheduleInput);
         localStorage.setItem("textInput", JSON.stringify(input));
     }
+        // Color coded text area
+        $("textarea").each(function() {
+            const textAreaHour = parseInt($(this).attr("value"));
+            const timeBlock = parseInt(moment().format("H"));
+            if (timeBlock > textAreaHour) {
+                $(this).addClass("past");
+            } else if (timeBlock === textAreaHour) {
+                $(this).addClass("present");
+            } else if (timeBlock < textAreaHour) {
+                $(this).addClass("future");
+            }
+        });
+
+
 
     $(".saveBtn").on("click", function () {
         // console.log("clicked");
