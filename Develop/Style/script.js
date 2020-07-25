@@ -6,72 +6,39 @@ $(document).ready(function () {
 
     dateDisplay.text(currentDate);
 
-    let daySchedule = [{
-        time: 9,
-        input: ""
-    },
-    {
-        time: 10,
-        input: ""
-    },
-    {
-        time: 11,
-        input: ""
-    },
-    {
-        time: 12,
-        input: ""
-    },
-    {
-        time: 1,
-        input: ""
-    },
-    {
-        time: 2,
-        input: ""
-    },
-    {
-        time: 3,
-        input: ""
-    },
-    {
-        time: 4,
-        input: ""
-    },
-    {
-        time: 5,
-        input: ""
-    },
-    ];
-
-    // function localStorageInput() {
-    //     if (!localStorage.getItem('daySchedule')) {
-    //         localStorage.setItem('daySchedule', JSON.stringify(daySchedule));  
-    //         console.log('daySchedule')  
-    //     }
-    // }
+    // Setting the time array
+    let daySchedule = ["9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"];
 
 
 
+    // Color coded text area
+    $("textarea").each(function () {
+        const textAreaHour = parseInt($(this).attr("value"));
+        const timeBlock = parseInt(moment().format("H"));
+        if (timeBlock > textAreaHour) {
+            $(this).addClass("past");
+        } else if (timeBlock === textAreaHour) {
+            $(this).addClass("present");
+        } else if (timeBlock < textAreaHour) {
+            $(this).addClass("future");
+        }
+    });
 
-        // Color coded text area
-        $("textarea").each(function () {
-            const textAreaHour = parseInt($(this).attr("value"));
-            const timeBlock = parseInt(moment().format("H"));
-            if (timeBlock > textAreaHour) {
-                $(this).addClass("past");
-            } else if (timeBlock === textAreaHour) {
-                $(this).addClass("present");
-            } else if (timeBlock < textAreaHour) {
-                $(this).addClass("future");
-            }
-        });
 
+    $(".saveBtn").on("click", function () {
+        let scheduleObj = {};
 
-        $(".saveBtn").on("click", function () {
-            // console.log("clicked");
-            localStorageInput();
+        $(".textInput").each(function (currentIndex, currentEl) {
+            console.log(currentIndex);
+            console.log(currentEl);
+
+            let input = $(currentEl);
+
+            scheduleObj.currentIndex = $(".textInput").val().trim();
+            console.log("textInput");
         })
+
+    })
 
 
 
