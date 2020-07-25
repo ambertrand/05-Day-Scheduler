@@ -20,13 +20,14 @@ $(document).ready(function () {
     });
 
 
-    let scheduleObj = [];
+    let scheduleArray = [];
 
-    function storeLS(scheduleObj) {
-        localStorage.setItem("dailySchedule", JSON.stringify(scheduleObj));
+    // Puts the schedule array in local storage
+    function storeLS(scheduleArray) {
+        localStorage.setItem("dailySchedule", JSON.stringify(scheduleArray));
     }
 
-    // loads dailyPlan from local storage and displays on screen
+    // Loads daily schedule from local storage and displays on screen when refreshed
     function retrieveLS() {
        let storedPlan = JSON.parse(localStorage.getItem("dailySchedule"));
         if (storedPlan !== null) {
@@ -37,32 +38,14 @@ $(document).ready(function () {
     }
     retrieveLS();
 
-
+    // When save button clicked adds each text input into current value to equivalent index
     $(".saveBtn").on("click", function () {
 
         $(".textInput").each(function (currentIndex, currentEl) {
-
-            scheduleObj[currentIndex] = $(currentEl).val().trim();
-
-
+            scheduleArray[currentIndex] = $(currentEl).val().trim();
         })
-        storeLS(scheduleObj);
+        storeLS(scheduleArray);
 
     });
 
 });
-
-
-
-
-
-// Psuedo code
-
-// When input added to Pull from LS to append to text area
-
-
-
-// Requirements
-
-// WHEN I refresh the page
-// THEN the saved events persist
