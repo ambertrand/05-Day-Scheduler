@@ -12,3 +12,6 @@ For this project I started out by building out the hour blocks in HTML and was a
 Below are screenshots of the finished product.
 
 **Images:**
+![Empty schedule](https://user-images.githubusercontent.com/65721950/88468664-f189da80-ceb4-11ea-9fde-15b9b82e47f2.png)
+![Empty schedule pt2](https://user-images.githubusercontent.com/65721950/88468666-f5b5f800-ceb4-11ea-9575-554e53eb2d5a.png)
+![Saved items](https://user-images.githubusercontent.com/65721950/88468668-f8b0e880-ceb4-11ea-98fb-637e7e8002fb.png)
