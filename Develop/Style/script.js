@@ -40,7 +40,7 @@ $(document).ready(function () {
 
     // When save button clicked adds each text input into current value to equivalent index
     $(".saveBtn").on("click", function () {
-
+        event.preventDefault();
         $(".textInput").each(function (currentIndex, currentEl) {
             scheduleArray[currentIndex] = $(currentEl).val().trim();
         })
