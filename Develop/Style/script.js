@@ -19,32 +19,37 @@ $(document).ready(function () {
         }
     });
 
-
-    let scheduleArray = [];
+    let scheduleArray = ["", "", "", "", "", "", "", "", ""];
+    // let textInput = $("#textInput");
 
     // Puts the schedule array in local storage
-    function storeLS(scheduleArray) {
-        localStorage.setItem("dailySchedule", JSON.stringify(scheduleArray));
-    }
+    localStorage.setItem("dailySchedule", JSON.stringify(scheduleArray));
+
 
     // Loads daily schedule from local storage and displays on screen when refreshed
-    function retrieveLS() {
-       let storedPlan = JSON.parse(localStorage.getItem("dailySchedule"));
-        if (storedPlan !== null) {
-            for (let i = 0; i < 10; i++) {
-                $("#textInput" + (i + 9)).text(storedPlan[i]);
-            }
-        }
+    function loadCalendar() {
+        // for (let i = 9; i < textInput.length; i++) {
+        //     textInput.val(localStorage.getItem(textInput[i]));
+        // }
+        $("#textInput9").val(localStorage.getItem("9"))
+        $("#textInput10").val(localStorage.getItem("10"))
+        $("#textInput11").val(localStorage.getItem("11"))
+        $("#textInput12").val(localStorage.getItem("12"))
+        $("#textInput1").val(localStorage.getItem("1"))
+        $("#textInput2").val(localStorage.getItem("2"))
+        $("#textInput3").val(localStorage.getItem("3"))
+        $("#textInput4").val(localStorage.getItem("4"))
+        $("#textInput5").val(localStorage.getItem("5"))
     }
-    retrieveLS();
+    loadCalendar();
 
     // When save button clicked adds each text input into current value to equivalent index
     $(".saveBtn").on("click", function () {
         event.preventDefault();
-        $(".textInput").each(function (currentIndex, currentEl) {
-            scheduleArray[currentIndex] = $(currentEl).val().trim();
-        })
-        storeLS(scheduleArray);
+        let hourSaved = parseInt($(this).attr("name"))
+        let textSaved = $(this).siblings(".textInput").val();
+
+        localStorage.setItem(hourSaved, textSaved);
 
     });
 
