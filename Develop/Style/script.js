@@ -19,23 +19,11 @@ $(document).ready(function () {
         }
     });
 
-    let scheduleArray = ["", "", "", "", "", "", "", "", ""];
-
-    // Puts the schedule array in local storage
-    localStorage.setItem("dailySchedule", JSON.stringify(scheduleArray));
-
-
     // Loads daily schedule from local storage and displays on screen when refreshed
     function loadCalendar() {
-        $("#textInput9").val(localStorage.getItem("9"))
-        $("#textInput10").val(localStorage.getItem("10"))
-        $("#textInput11").val(localStorage.getItem("11"))
-        $("#textInput12").val(localStorage.getItem("12"))
-        $("#textInput1").val(localStorage.getItem("1"))
-        $("#textInput2").val(localStorage.getItem("2"))
-        $("#textInput3").val(localStorage.getItem("3"))
-        $("#textInput4").val(localStorage.getItem("4"))
-        $("#textInput5").val(localStorage.getItem("5"))
+        for (let i = 9; i < 18; i++) {
+            $("#textInput" + i).val(localStorage.getItem(i)
+        )}
     }
     loadCalendar();
 
