@@ -7,6 +7,12 @@ The goal of this project was to creat a simple calendar application that allows 
 ## Deployed Web App:
  [Alex's Scheduler](https://ambertrand.github.io/05-Day-Scheduler/)
 
+## Technologies Used
+    * Basic: HTML, CSS, Javascript
+    * Bootstrap
+    * JQuery
+    * Momentjs
+
 ## Developer Notes: 
 For this project I was tasked with developing a current day scheduler that could save inputs in each hour block.  When the save button was hit it would save the text to the page and if it was refreshed it still stayed on the page.  When the time at the top of the page is equivalent to a time block it displays red and when its past it displays gray and future displays green.
 
